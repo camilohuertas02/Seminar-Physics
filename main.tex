@@ -1,0 +1,75 @@
+%====================================================================
+% PREAMBLE
+%====================================================================
+\documentclass[11pt, english]{scrbook}
+
+% --- Core Packages ---
+\usepackage[T1]{fontenc}                % Use modern font encodings
+\usepackage{lmodern}                    % Use the Latin Modern font
+\usepackage[utf8]{inputenc}             % For UTF-8 input
+\usepackage[english]{babel}             % Language-specific typesetting
+\usepackage{microtype}                  % Improves justification and typography
+\usepackage{csquotes}
+
+% --- Arsclassica Styling ---
+\usepackage{arsclassica}
+
+% --- Mathematics Packages ---
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{bm}           % For bold math symbols, e.g., \bm{v}
+\usepackage{derivative}   % For derivatives notation
+
+% --- Graphics and Referencing ---
+\usepackage{graphicx}                   % For including images
+\usepackage[capitalize]{cleveref}       % For smart cross-referencing (use \cref{})
+
+% --- Bibliography ---
+\usepackage[
+	backend=biber,
+	style=numeric-comp,
+	sorting=none
+]{biblatex}
+\addbibresource{references.bib}         % Link the bibliography file
+
+% --- Theorem-like Environments ---
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{definition}[theorem]{Definition} % Uses the same counter as theorem
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+
+%====================================================================
+% DOCUMENT METADATA
+%====================================================================
+\title{Notes Seminar}
+\author{Group}
+\date{\today}
+\publishers{
+	Programa Académico de Física \\
+	Facultad de Ciencias Matemáticas y Naturales \\
+	Universidad Distrital Francisco José de Caldas
+}
+
+%====================================================================
+% DOCUMENT BODY
+%====================================================================
+\begin{document}
+
+% --- Front Matter ---
+\frontmatter
+\maketitle
+\tableofcontents
+
+% --- Main Matter ---
+\mainmatter
+
+% --- Back Matter ---
+% Contains appendices, bibliography, index.
+\backmatter
+
+\printbibliography % This command prints the bibliography
+
+\end{document}
