@@ -1,0 +1,78 @@
+Considere un sistema de dos partículas $m_1$ y $m_2$ de la misma clase, con fuerzas centrales mutuas, cuyas posiciones están dadas en términos de los vectores $\vec{r}_1$ y $\vec{r}_2$. En primera, las fuerzas que actúan sobre cada partícula será función del vector distancia entre ellas definido por $\vec{r}=\vec{r}_2-\vec{r}_1$, por ende asociamos un potencial en función de la magnitud $r$ de forma $U(r,\dot{r},...)$, así nuestro sistema de 6 grados de libertad estará dado por el lagrangiano:
+	
+	\[
+	L=T-U=\frac{1}{2}m_1\dot{r}_1^2+\frac{1}{2}m_2\dot{r}_2^2 - U(r,\dot{r},...)
+	\]
+
+	Ahora conviene escribir $\vec{r}_1$ y $\vec{r}_2$ en términos del centro de masa $\vec{R}$ y el vector $\vec{r}$, efectuando una transformación en las ecuaciones de Lagrange que preserva su forma, reescribimos entonces los vectores de la siguiente forma:
+	
+	\[
+	\begin{array}{c}
+		\vec{r}_1=\vec{R}+\vec{r'}_1\\\vec{r}_2=\vec{R}+\vec{r'}_2
+	\end{array}
+	\quad\quad\text{con}\quad\quad \vec{R}=\frac{m_1\vec{r}_1+m_2\vec{r}_2}{m_1+m_2}\quad \vec{r'}_1=-\frac{m_2}{m_1+m_2}\vec{r}\quad\vec{r'}_2=\frac{m_1}{m_1+m_2}\vec{r}
+	\]
+	
+	Es necesario transformar el lagrangiano en función de $\vec{R}$ y $\vec{r}$ usando las ecuaciones de transformación previamente escritas. Notemos que, en el sistema primado donde se definen $\vec{r'}_1$ y $\vec{r'}_2$ (vectores que van del centro de masas hasta la partícula), el centro de masas coincide con el vector nulo:
+	
+	\[
+	L=\frac{1}{2}m_1(\dot{R}^2+\dot{r'}^{2}_1)+\frac{1}{2}m_2(\dot{R}^2+\dot{r'}^{2}_2)+\dot{\vec{R}}\cdot\frac{d}{dt}(m_1\vec{r'}_1+m_2\vec{r'}_2) - U(r,\dot{r},...)
+	\]
+	
+	Así el tercer termino es nulo y el lagrangiano toma la forma, en la que es necesario aplicar álgebra para dejarlo totalmente en función de $\vec{r}$:
+	
+	\[
+	L=\frac{1}{2}(m_1+m_2)\dot{R}^{2}+\frac{1}{2}(m_1\dot{r'}^{2}_1+m_2\dot{r'}^{2}_2)-U(r,\dot{r},...)
+	\]
+	
+	\[
+	\dot{r'}^{2}_1=\frac{m_2^{2}}{(m_1+m_2)^{2}}\dot{r}^{2}\quad\dot{r'}^{2}_2=\frac{m_1^{2}}{(m_1+m_2)^{2}}\dot{r}^{2}\quad\quad m_1\dot{r'}^{2}_1+m_2\dot{r'}^{2}_2=\frac{m_1m_2}{m_1+m_2}\left[\frac{m_2\dot{r}^2+m_1\dot{r}^2}{m_1+m_2}\right]
+	\]
+	
+	\[
+	L=\frac{1}{2}(m_1+m_2)\dot{R}^{2}+\frac{1}{2}\frac{m_1m_2}{m_1+m_2}\dot{r}^2-U(r,\dot{r},...)
+	\]
+	
+	Podemos notar que $R$ es cíclica, es decir, la lagrangiana no contiene $R$ (no tomar como definición) y por ende tendrá una cantidad de movimiento que se conserva, lo restante define un sistema de una sola partícula (con 3 grados de libertad) de masa reducida $\mu$ cuya posición esta definida por $\vec{r}$:
+	
+	\[
+	L=\frac{1}{2}\frac{m_1m_2}{m_1+m_2}\dot{r}^2-U(r,\dot{r},...)=\frac{1}{2}\mu\dot{r}^2-U(r,\dot{r},...)
+	\]
+	
+	Consideraremos ahora fuerzas conservativas, es decir $U=U(r)$, y la simetría esférica del sistema, note que se pueden hacer rotaciones alrededor de la esfera que define el vector $r$ sin alterar el lagrangiano del sistema, es decir, se conserva el momentum angular total:
+	
+	\[
+	\vec{L}=\vec{r}\times\vec{p}\quad\quad \vec{L}(l,\theta,\phi)
+	\]
+	
+	De aquí se sigue que $\vec{r}$ esta dado sobre el plano que define $\vec{L}$, si se fija $\theta$ y $\phi$ de $\vec{L}$ el numero de grados de libertad disminuye a 2 y contamos así con dos cantidades conservadas para solucionar el problema, $E$ y $l$. Ahora escribimos el lagrangiano en coordenadas polares y junto a las dos ecuaciones de movimiento:
+	
+	\[
+	L=T-U=\frac{1}{2}\mu(\dot{r}^2+r^2\dot{\theta}^2)-U(r)
+	\]
+	
+	Notamos que $\theta$ es cíclica pero no se puede ignorar, aunque igual tiene una cantidad conservada asociada $p_\theta\equiv l$, esta primera ecuación de movimiento se puede escribir de manera tal que se llegue a una de las leyes de Kepler, áreas iguales en tiempos iguales:
+	
+	\[
+	\dot{p_\theta}=\frac{d}{dt}\left(\mu r^2\dot{\theta}\right)=0\quad\quad\frac{d}{dt}\left(\frac{1}{2}rr\dot{\theta}\right)=0\quad\quad dA=\frac{1}{2}rrd\theta\quad\Longrightarrow\frac{d}{dt}\left(\frac{dA}{dt}\right)=0
+	\]
+	
+	En cuanto a la segunda ecuación de movimiento, es posible reescribirla usando el momentum angular $l=mr^2\dot{\theta}$, donde $f(r)$ es la fuerza efectuada sobre la partícula que no esta en el centro de coordenadas:
+	
+	\[
+	\mu\ddot{r}-\mu r\dot{\theta}^2=-\frac{\partial U}{\partial r}=f(r)\quad\quad\mu\ddot{r}-\frac{l^2}{\mu r^3}=f(r)\quad\Longrightarrow\quad\mu\ddot{r}=f(r)+\frac{l^2}{\mu r^3}
+	\]  
+	El segundo termino lo podemos reescribir como la derivada respecto a $r$ de cierta cantidad, en cuanto al primer termino, si multiplicamos la ecuación por $\dot{r}$, es posible escribirlo como una derivada respecto al tiempo:
+	
+	\[
+	f(r)+\frac{l^2}{\mu r^3}=-\frac{d}{dr}\left(U+\frac{1}{2}\frac{l^2}{\mu r^2}\right)\quad\quad\mu\ddot{r}\dot{r}=\frac{d}{dt}\left(\frac{1}{2}\mu\dot{r}^2\right)
+	\]
+	\[
+	\mu\ddot{r}\dot{r}=\left(f(r)+\frac{l^2}{\mu r^3}\right)\dot{r}\quad\Longrightarrow\quad\frac{d}{dt}\left(\frac{1}{2}\mu\dot{r}^2\right)=-\frac{d}{dr}\left(U+\frac{1}{2}\frac{l^2}{\mu r^2}\right)\frac{dr}{dt}
+	\]
+	
+	\[
+	\frac{d}{dt}\left(\frac{1}{2}\mu\dot{r}^2+U+\frac{1}{2}\frac{l^2}{\mu r^2}\right)=0
+	\]
+	
+	Es así como llegamos a otra cantidad conservada que ya mencionamos en algún momento, la energía $E$. Es importante notar que ya hicimos la primera integral de cada una de las ecuaciones de movimiento, y no fue necesario acudir a los valore iniciales $\dot{r}_0$ y $\dot{\theta}_0$, es posible efectuar la segunda integral para las dos ecuaciones y determinar el estado del sistema con las cantidades $(E,l,r_0,\theta_0)$.
