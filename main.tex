@@ -1,14 +1,14 @@
 %====================================================================
 % PREAMBLE
 %====================================================================
-\documentclass[11pt, english]{scrbook}
+\documentclass[11pt, spanish, open=any]{scrbook}
 
 % --- Core Packages ---
-\usepackage[T1]{fontenc}                % Use modern font encodings
-\usepackage{lmodern}                    % Use the Latin Modern font
-\usepackage[utf8]{inputenc}             % For UTF-8 input
-\usepackage[english]{babel}             % Language-specific typesetting
-\usepackage{microtype}                  % Improves justification and typography
+\usepackage[T1]{fontenc}           % Use modern font encodings
+\usepackage{lmodern}               % Use the Latin Modern font
+\usepackage[utf8]{inputenc}        % For UTF-8 input
+\usepackage[english]{babel}        % Language-specific typesetting
+\usepackage{microtype}             % Improves justification and typography
 \usepackage{csquotes}
 
 % --- Arsclassica Styling ---
@@ -19,20 +19,20 @@
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{amsfonts}
-\usepackage{bm}           % For bold math symbols, e.g., \bm{v}
-\usepackage{derivative}   % For derivatives notation
+\usepackage{bm}                    % For bold math symbols, e.g., \bm{v}
+\usepackage{derivative}            % For derivatives notation
 
 % --- Graphics and Referencing ---
-\usepackage{graphicx}                   % For including images
-\usepackage[capitalize]{cleveref}       % For smart cross-referencing (use \cref{})
+\usepackage{graphicx}              % For including images
+\usepackage[capitalize]{cleveref}  % For smart cross-referencing (use \cref{})
 
 % --- Bibliography ---
 \usepackage[
-	backend=biber,
-	style=numeric-comp,
-	sorting=none
+    backend=biber,
+    style=numeric-comp,
+    sorting=none
 ]{biblatex}
-\addbibresource{references.bib}         % Link the bibliography file
+\addbibresource{references.bib}    % Link the bibliography file
 
 % --- Theorem-like Environments ---
 \newtheorem{theorem}{Theorem}[chapter]
@@ -44,13 +44,13 @@
 %====================================================================
 % DOCUMENT METADATA
 %====================================================================
-\title{Notes Seminar}
-\author{Group}
-\date{\today}
+\title{Bitacoras del Seminario de Física Teórica}
+\author{}
+\date{2025}
 \publishers{
-	Programa Académico de Física \\
-	Facultad de Ciencias Matemáticas y Naturales \\
-	Universidad Distrital Francisco José de Caldas
+    Programa Académico de Física \\
+    Facultad de Ciencias Matemáticas y Naturales \\
+    Universidad Distrital Francisco José de Caldas
 }
 
 %====================================================================
@@ -65,6 +65,20 @@
 
 % --- Main Matter ---
 \mainmatter
+
+% --- NUEVA SECCIÓN DE PARTICIPANTES ---
+\chapter{Participantes del Seminario}
+\input{./Sessions/participants.tex} 
+
+
+\chapter{Problema de 2 cuerpos:}
+
+\section{Goldstein, Capitulo 3:}
+\input{./Sessions/Two-Body-Problem/goldstein-cap-3.tex}
+
+\section{Simmons, Seccion 21:}
+\input{./Sessions/Two-Body-Problem/simmons-sec-21.tex}
+
 
 % --- Back Matter ---
 % Contains appendices, bibliography, index.
